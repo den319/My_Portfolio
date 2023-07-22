@@ -18,7 +18,7 @@ const data_of_game_projects= [
         source_code: 'https://github.com/den319/Tic-Tac-Toe',
         hosting_link: 'https://den319.github.io/Tic-Tac-Toe/',
         in_progress: false,
-
+        details: 'hi',
     },
 ];
 
@@ -29,6 +29,7 @@ const data_of_web_app_projects= [
         source_code: 'https://github.com/den319/Movie_spooky',
         hosting_link: 'https://den319.github.io/Movie_spooky/',
         in_progress: true,
+        details: 'hiaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
     },
     {
         name: 'Stokart',
@@ -36,6 +37,7 @@ const data_of_web_app_projects= [
         source_code: 'https://github.com/den319/Stokart--a-stock-market-site',
         hosting_link: 'https://den319.github.io/Stokart--a-stock-market-site/',
         in_progress: true,
+        details: 'hi',
     },
     {
         name: 'Spotify Student Offer Page',
@@ -43,6 +45,7 @@ const data_of_web_app_projects= [
         source_code: 'https://github.com/den319/Spotify_Student_Offer_Page',
         hosting_link: 'https://den319.github.io/Spotify_Student_Offer_Page/',
         in_progress: false,
+        details: 'hi',
     }
 ];
 
@@ -187,6 +190,7 @@ function render_game_development_projects() {
         render_content_of_projects(project);
     });
 
+    render_project_image(data_of_game_projects[0]);
 
 }
 
@@ -197,12 +201,16 @@ function render_web_development_projects() {
     data_of_web_app_projects.forEach(project => {
         render_content_of_projects(project);
     });
+
+    render_project_image(data_of_web_app_projects[0]);
 }
 
 
 function render_content_of_projects(project) {
 
     const project_list_div= document.querySelector('.project-list-div');
+   
+
 
     const {name, image_path, source_code, hosting_link, in_progress}= project;
 
@@ -210,6 +218,7 @@ function render_content_of_projects(project) {
 
         const project_div= document.createElement('div');
         project_div.setAttribute('class', 'project-div');
+        // project_div.setAttribute('id', )
         project_list_div.appendChild(project_div);
 
             const project_header= document.createElement('div');
@@ -241,6 +250,26 @@ function render_content_of_projects(project) {
                 preview.href= `#${hosting_link}`;
                 preview.innerText= 'Preview';
                 link_div.appendChild(preview);
+
+        
+        project_div.addEventListener('click', (event) => {
+            event.preventDefault();
+            render_project_image(project); 
+        });
+}
+
+function render_project_image(project) {
+    const img_section= document.querySelector('.img-section');
+    const project_info= document.querySelector('.project-info');
+
+    const project_image= document.createElement('img');
+    project_image.src= `${project.image_path}`;
+    project_image.alt= `Project Image for ${project.title}`;
+    img_section.appendChild(project_image);
+
+    const project_details= document.createElement('div');
+    project_details.innerText= `${project.details}`;
+    project_info.appendChild(project_details);
 }
 
 
