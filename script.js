@@ -9,6 +9,8 @@ const project_container= document.getElementById('project-container');
 
 
 
+
+
 // ------------------------------------ variables ---------------------------
 
 const data_of_game_projects= [
@@ -94,12 +96,12 @@ function render_project_section() {
             field_title_1.innerText='Game Development';
             game_btn.appendChild(field_title_1);
 
-            // console.log(field_title_1.style);
 
     const image_container_2= document.createElement('section');
     image_container_2.setAttribute('class', 'image-container');
     image_container_2.setAttribute('id', 'image-container-2');
     project_container.appendChild(image_container_2);
+
 
         const web_btn= document.createElement('button');
         web_btn.setAttribute('class', 'project-button');
@@ -119,72 +121,74 @@ function render_project_section() {
             web_btn.appendChild(field_title_2);
 
 
+        // event listner for different field
 
-        // event listner for different fields
+        game_btn.addEventListener('click', (event) => {
+            render_outer_layout();
 
-        project_container.addEventListener('click', (event) => {
-            // console.log(event.target.id);
-            
-            project_container.innerHTML= '';
+            render_game_development_projects(); 
+        });
 
+        web_btn.addEventListener('click', (event) => {
+            render_outer_layout();
+
+            render_web_development_projects();
+        })
+}
+
+
+function render_outer_layout() {
+    project_container.innerHTML= '';
+
+    if(screen.width < 590) {
+        project_container.style.height= '20rem';
+    }
+    
+
+    console.log(screen.width);
+        
             const outer_project_container= document.createElement('div');
             outer_project_container.setAttribute("class", "outer-project-container");
             project_container.appendChild(outer_project_container);
-
+        
                 const back_btn= document.createElement('button');
                 back_btn.setAttribute('class', 'back-btn');
                 back_btn.textContent= 'Back';
                 outer_project_container.appendChild(back_btn);
+        
+        
+                back_btn.addEventListener('click', (event) => {
+                    
+                    project_container.innerHTML= '';
+                    project_container.style.height= '40rem';
 
-                
-
+        
+                    render_project_section();
+                });
+        
                 const project_sub_container= document.createElement('div');
                 project_sub_container.setAttribute("class", "project-sub-container");
                 outer_project_container.appendChild(project_sub_container);
-
+        
                     const project_list_div= document.createElement('div');
                     project_list_div.setAttribute('class','project-list-div');
                     project_sub_container.appendChild(project_list_div);
-
+        
                     const about_project_section= document.createElement('div');
                     about_project_section.setAttribute('class', 'about-project-section');
                     project_sub_container.appendChild(about_project_section);
-
+        
                         const img_section= document.createElement('div');
                         img_section.setAttribute('class', 'img-section');
                         about_project_section.appendChild(img_section);
-
+        
                         const project_info= document.createElement('div');
                         project_info.setAttribute('class', 'project-info');
                         about_project_section.appendChild(project_info);
-
-
-            if(event.target.id == 'image-1') {
-
-                render_game_development_projects();
-
-            } else if(event.target.id == 'image-2') {
-
-                render_web_development_projects();
-                
-            }
-
-            back_btn.addEventListener('click', (event) => {
-
-                console.log('clicked');
-                project_container.innerHTML= '';
-
-                // console.log(project_container.innerHTML);
-                render_project_section();
-            });
-        });
-         
 }
+ 
 
 function render_game_development_projects() {
-    console.log(data_of_game_projects);    
-
-    // console.log(project_list_div);
 
     data_of_game_projects.forEach(project => {
         render_content_of_projects(project);
@@ -225,7 +229,7 @@ function render_content_of_projects(project) {
             project_header.setAttribute('class','project-header');
             project_div.appendChild(project_header);
 
-                const project_name= document.createElement('h4');
+                const project_name= document.createElement('h2');
                 project_name.setAttribute('class', 'project-name');
                 project_name.textContent = name ;
                 project_header.appendChild(project_name);
@@ -242,18 +246,25 @@ function render_content_of_projects(project) {
             project_div.appendChild(link_div);
 
                 const source_code_link= document.createElement('a');
-                source_code_link.href=`#${source_code}`;
+                source_code_link.href=`${source_code}`;
                 source_code_link.innerText= 'Source Code';
                 link_div.appendChild(source_code_link);
 
                 const preview= document.createElement('a');
-                preview.href= `#${hosting_link}`;
+                preview.href= `${hosting_link}`;
                 preview.innerText= 'Preview';
                 link_div.appendChild(preview);
 
         
         project_div.addEventListener('click', (event) => {
             event.preventDefault();
+
+            const img_section= document.querySelector('.img-section');
+            const project_info= document.querySelector('.project-info');
+
+            img_section.innerHTML= '';
+            project_info.innerHTML= '';
+
             render_project_image(project); 
         });
 }
