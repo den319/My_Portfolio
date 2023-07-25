@@ -9,13 +9,14 @@
     font-family: Fira Sans, sans-serif;
 }
 
-.body-home  {
+body  {
     margin: 0;
     padding: 0;
 
     background-image: url(https://uploads-ssl.webflow.com/5e2520252e290c852ed89624/5e7c21a34149343b88c20898_Gradient-home.png), linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0));
     background-repeat: no-repeat;
-    /* background-attachment: fixed; */
+
+    background-size: 140%, auto;
 }
 
 .nav-bar {
@@ -56,6 +57,10 @@
             display: flex;
             list-style: none;
         }
+
+        .nav-item {
+            list-style: none;
+        }
     
         
             .nav-link {
@@ -65,6 +70,7 @@
                 font-weight: 600;
                 /* line-height: 28px; */
                 /* display: inline-block; */
+                
                 text-decoration: none;
                 color: #222;
                 transition: 1s;
@@ -531,10 +537,107 @@
                                 -webkit-text-fill-color: transparent;
                             }
 
+/* about me section */
+
+        .home-btn {
+            display: flex;
+            margin: 3rem 8rem;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+            .home-btn > .nav-item {
+                text-align: center;
+            }
+
+            .home-btn a{
+                font-size: 25px;
+            }
 
 
+        .about-me-section {
+            margin: 4rem 8rem 3.5rem 8rem;
+            border-bottom: 2px solid;
+        }   
+
+            .about-me-sub-section {
+                /* width: 900px; */
+                margin-bottom: 96px;
+                padding-bottom: 0;
+            }
+
+                .about-me-sub-section > h1 {
+                    font-size: 55px;
+                }
+
+                .my-introduction {
+                    display: flex;
+                    flex-wrap: nowrap;
+                    flex-direction: row;
+                    margin-bottom: 4rem;
+                }
+
+                    .my-info{
+                        margin: 0rem 8rem 0rem 0rem;
+                        line-height: 30px;
+                    }
+
+                        .my-info > p {
+                            font-size: 22px;
+                            letter-spacing: 2px;
+                        }
+
+                    .my-image {
+                        max-height: 212px;                  
+                        background-position: 40px;
+                        background-repeat: no-repeat;
+                        background-size: 16px 120px;
+                    }
+
+                        .my-image > img {
+                            max-height: 264px;
+                            max-width: 264px;
+                            border: 4px solid #fff;
+                            border-radius: 24px;
+                            box-shadow: 0px 0px 80px rgba(0, 0, 0, 2.12);
+                        }
+
+                .more-about-me {
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: nowrap;
+                }
+
+                    .about-me-box {
+                        width: 50%;
+                    }
+
+                        .about-me-box > h2 {
+                            font-size: 25px;
+                        }
+
+                        .about-me-para {
+                            font-size: 23px;
+                        }
 
 /* media queries */
+
+@media only screen and (width <= 1000px) {
+
+    .home-btn {
+        margin: 3rem 4rem;
+    }
+
+    .about-me-section {
+        margin: 4rem 4rem 3.5rem;
+    }  
+
+        .my-info{
+            margin: 0rem 2rem 0rem 0rem;
+        }
+}
             
 @media only screen and (max-width: 768px){
     
@@ -714,6 +817,72 @@
                             padding: 10px;
                         }
 
+/* about me section */
+
+        .home-btn {
+            display: flex;
+            margin: 2rem 3rem;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+            .home-btn a{
+                font-size: 25px;
+            }
+
+
+        .about-me-section {
+            margin: 3rem 4rem 0rem 4rem;
+            border-bottom: 2px solid;
+        }   
+
+            .about-me-sub-section {
+                /* width: 900px; */
+                margin-bottom: 96px;
+                padding-bottom: 0;
+            }
+
+                .about-me-sub-section > h1 {
+                    font-size: 45px;
+                }
+
+                .my-introduction {
+                    display: flex;
+                    flex-wrap: nowrap;
+                    flex-direction: row;
+                    margin-bottom: 2rem;
+                }
+
+                    .my-info{
+                        margin: 0rem 4rem 0rem 0rem;
+                        line-height: 30px;
+                    }
+
+                        .my-info > p {
+                            margin-top: 0;
+                            font-size: 20px;
+                            letter-spacing: 1px;
+                        }
+
+                        .my-image > img {
+                            max-height: 200px;
+                            border-radius: 24px;
+                            box-shadow: 11px 11px 48px rgba(0, 0, 0, .12);
+                        }
+
+                    .about-me-box {
+                        width: 50%;
+                    }
+
+                        .about-me-box > h2 {
+                            font-size: 23px;
+                        }
+
+                        .about-me-para {
+                            font-size: 20px;
+                        }
 
 
     
@@ -860,6 +1029,65 @@
         .footer-sub-container-links {
             padding-bottom: 4rem;
         }
+
+
+
+    /* about me section */
+
+        .home-btn {
+            margin: 2rem 2rem 1rem;
+        }
+
+            .home-btn a{
+                font-size: 22px;
+            }
+
+
+        .about-me-section {
+            margin: 2rem 3rem 0rem;
+            border-bottom: 2px solid;
+        }   
+
+            .about-me-sub-section {
+                /* width: 900px; */
+                margin-bottom: 50px;
+                padding-bottom: 0;
+            }
+
+                .about-me-sub-section > h1 {
+                    font-size: 37px;
+                }
+
+                .my-introduction {
+                    margin-bottom: 1rem;
+                }
+
+                    .my-info{
+                        margin: 0rem 3rem 0rem 0rem;
+                    }
+
+                        .my-info > p {
+                            font-size: 17px;
+                            letter-spacing: 1px;
+                        }
+
+                        .my-image > img {
+                            max-height: 180px;
+                            border-radius: 24px;
+                            box-shadow: 11px 11px 48px rgba(0, 0, 0, .12);
+                        }
+
+                    .about-me-box {
+                        width: 50%;
+                    }
+
+                        .about-me-box > h2 {
+                            font-size: 23px;
+                        }
+
+                        .about-me-para {
+                            font-size: 20px;
+                        }
 }
 
 @media only screen and (width <= 590px){
@@ -1092,6 +1320,67 @@
                     .contact {
                         font-size: 30px;
                     }
+
+
+    /* about me section */
+
+    .home-btn {
+        margin: 1rem 1.5rem 0rem;
+    }
+
+        .home-btn a{
+            font-size: 22px;
+        }
+
+
+    .about-me-section {
+        margin: 1rem 2rem 0rem;
+    }   
+
+        .about-me-sub-section {
+            margin-bottom: 50px;
+        }
+
+            .about-me-sub-section > h1 {
+                font-size: 35px;
+            }
+
+            .my-introduction {
+                margin-bottom: 1rem;
+            }
+
+                .my-info{
+                    margin: 0rem 2rem 0rem 0rem;
+                }
+
+                    .my-info > p {
+                        font-size: 15px;
+                        letter-spacing: 1px;
+                    }
+
+                .my-image {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: flex-end;
+                }
+
+                    .my-image > img {
+                        max-height: 180px;
+                        border-radius: 24px;
+                        box-shadow: 11px 11px 48px rgba(0, 0, 0, .12);
+                    }
+
+                .about-me-box {
+                    width: 50%;
+                }
+
+                    .about-me-box > h2 {
+                        font-size: 20px;
+                    }
+
+                    .about-me-para {
+                        font-size: 17px;
+                    }
 }
 
 @media only screen and (width <= 452px) {
@@ -1312,6 +1601,64 @@
                     .contact {
                         font-size: 25px;
                     }
+
+
+
+     /* about me section */
+
+     .home-btn {
+        margin: 1rem 1rem 0rem;
+    }
+
+        .home-btn a{
+            font-size: 17px;
+        }
+
+
+    .about-me-section {
+        margin: 0rem 1.5rem 0rem;
+    }   
+
+        .about-me-sub-section {
+            margin-bottom: 35px;
+        }
+
+            .about-me-sub-section > h1 {
+                font-size: 25px;
+            }
+
+            .my-introduction {
+                margin-top: 22px;
+            }
+
+                .my-info{
+                    margin-right: 18px;
+                }
+
+                    .my-info > p {
+                        font-size: 13px;
+                        letter-spacing: 0px;
+                        line-height: 17px;
+                    }
+
+                .my-image {
+                    display: block;
+                    
+                }
+
+                    .my-image > img {
+                        max-height: 105px;
+                        border-radius: 24px;
+                        box-shadow: 11px 11px 48px rgba(0, 0, 0, .12);
+                    }
+
+                    .about-me-box > h2 {
+                        font-size: 15px;
+                    }
+
+                    .about-me-para {
+                        font-size: 13px;
+                    }
 }
 
 @media only screen and (width <= 320px) {
@@ -1403,7 +1750,6 @@
                 }
 
 
-
     /* footer section */
 
     .footer-section {
@@ -1443,6 +1789,66 @@
 
                     .contact {
                         font-size: 22px;
+                    }
+
+
+
+
+     /* about me section */
+
+     .home-btn {
+        margin: 1rem 0.5rem 0rem;
+    }
+
+        .home-btn a{
+            font-size: 15px;
+        }
+
+
+    .about-me-section {
+        margin: 0rem 1rem 0rem;
+    }   
+
+        .about-me-sub-section {
+            margin-bottom: 35px;
+        }
+
+            .about-me-sub-section > h1 {
+                font-size: 20px;
+            }
+
+            .my-introduction {
+                margin-top: 15px;
+                margin-bottom: 0;
+            }
+
+                .my-info{
+                    margin-right: 15px;
+                }
+
+                    .my-info > p {
+                        font-size: 10px;
+                        letter-spacing: 0px;
+                        line-height: 13px;
+                    }
+
+                .my-image {
+                    display: block;
+                    
+                }
+
+                    .my-image > img {
+                        max-height: 90px;
+                        border-radius: 15px;
+                        box-shadow: 0px 0px 80px rgba(0, 0, 0, 2.12);
+                    }
+
+                    .about-me-box > h2 {
+                        font-size: 12px;
+                    }
+
+                    .about-me-para {
+                        font-size: 10px;
                     }
 }
 
