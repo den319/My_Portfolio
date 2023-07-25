@@ -145,7 +145,7 @@ function render_outer_layout() {
     }
     
 
-    console.log(screen.width);
+    // console.log(screen.width);
         
             const outer_project_container= document.createElement('div');
             outer_project_container.setAttribute("class", "outer-project-container");
@@ -257,7 +257,8 @@ function render_content_of_projects(project) {
 
         
         project_div.addEventListener('click', (event) => {
-            event.preventDefault();
+            // event.preventDefault();
+            // console.log('project_div clicked');
 
             const img_section= document.querySelector('.img-section');
             const project_info= document.querySelector('.project-info');
@@ -266,7 +267,7 @@ function render_content_of_projects(project) {
             project_info.innerHTML= '';
 
             render_project_image(project); 
-        });
+        }, false);
 }
 
 function render_project_image(project) {
