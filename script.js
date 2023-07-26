@@ -20,7 +20,7 @@ const data_of_game_projects= [
         source_code: 'https://github.com/den319/Tic-Tac-Toe',
         hosting_link: 'https://den319.github.io/Tic-Tac-Toe/',
         in_progress: false,
-        details: 'hi',
+        details: 'Tech stack: HTML, CSS, Javascript',
     },
 ];
 
@@ -31,7 +31,7 @@ const data_of_web_app_projects= [
         source_code: 'https://github.com/den319/Movie_spooky',
         hosting_link: 'https://den319.github.io/Movie_spooky/',
         in_progress: true,
-        details: 'hiaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
+        details: 'Tech stack: HTML, CSS, Javascript \n\n You can search the movie you want and also you able to see the list movies of your prefernces. \n\n You can add or remove your favourite movies from watchlist.',
     },
     {
         name: 'Stokart',
@@ -39,7 +39,7 @@ const data_of_web_app_projects= [
         source_code: 'https://github.com/den319/Stokart--a-stock-market-site',
         hosting_link: 'https://den319.github.io/Stokart--a-stock-market-site/',
         in_progress: true,
-        details: 'hi',
+        details: 'Tech stack: HTML, CSS, Javascript \n\n You can search the stock you want. \n\n You can add or remove your favourite stocks from watchlist.',
     },
     {
         name: 'Spotify Student Offer Page',
@@ -47,7 +47,7 @@ const data_of_web_app_projects= [
         source_code: 'https://github.com/den319/Spotify_Student_Offer_Page',
         hosting_link: 'https://den319.github.io/Spotify_Student_Offer_Page/',
         in_progress: false,
-        details: 'hi',
+        details: 'Tech stack: HTML, CSS \n\n This is a offer page specially targeting the student customer with exclusive offers given by Spotify.',
     }
 ];
 
