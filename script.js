@@ -20,7 +20,8 @@ const data_of_game_projects= [
         source_code: 'https://github.com/den319/Tic-Tac-Toe',
         hosting_link: 'https://den319.github.io/Tic-Tac-Toe/',
         in_progress: false,
-        details: 'Tech stack: HTML, CSS, Javascript',
+        skills: ['HTML', "CSS", 'JavaScript'],
+        details: '• A classic two-player Tic Tac Toe game with a responsive design. \n\n • Players take turns marking spaces in a three-by-three grid with Os and Xs. \n\n • The player who gets three marks in a row wins the game.',
     },
 ];
 
@@ -28,18 +29,20 @@ const data_of_web_app_projects= [
     {
         name: 'Movie Spooky',
         image_path: './assets/movie_spooky.JPG',
-        source_code: 'https://github.com/den319/Movie_spooky',
-        hosting_link: 'https://den319.github.io/Movie_spooky/',
+        source_code: 'https://github.com/den319/Movie-Spooky',
+        hosting_link: 'https://den319.github.io/Movie-Spooky/',
         in_progress: true,
-        details: 'Tech stack: HTML, CSS, Javascript \n\n You can search the movie you want and also you able to see the list movies of your prefernces. \n\n You can add or remove your favourite movies from watchlist.',
+        skills: ['HTML', "CSS", 'JavaScript'],
+        details: '• A responsive movie search application that allows users to search for movies, view detailed information, and manage a watchlist. \n\n • Utilized the REST API to fetch movie data and implemented features like sorting and searching. \n\n • Features: Watchlist management, sorting of list of movies, responsive design.',
     },
     {
         name: 'Stokart',
         image_path: './assets/stokart.JPG',
-        source_code: 'https://github.com/den319/Stokart--a-stock-market-site',
-        hosting_link: 'https://den319.github.io/Stokart--a-stock-market-site/',
+        source_code: 'https://github.com/den319/Stokart-v-1.0.0',
+        hosting_link: 'https://den319.github.io/Stokart-v-1.0.0//',
         in_progress: true,
-        details: 'Tech stack: HTML, CSS, Javascript \n\n You can search the stock you want. \n\n You can add or remove your favourite stocks from watchlist.',
+        skills: ['HTML', "CSS", 'JavaScript'],
+        details: '• A responsive stock market information web-application that provides updates on stocks of US stock market. \n\n • Utilized the REST API to fetch stock data, including top gainers and top losers. \n\n • Features: Top gainers and losers, stock search with recommendation, daily/weekly/monthly data views, watchlist management.',
     },
     {
         name: 'Spotify Student Offer Page',
@@ -47,7 +50,8 @@ const data_of_web_app_projects= [
         source_code: 'https://github.com/den319/Spotify_Student_Offer_Page',
         hosting_link: 'https://den319.github.io/Spotify_Student_Offer_Page/',
         in_progress: false,
-        details: 'Tech stack: HTML, CSS \n\n This is a offer page specially targeting the student customer with exclusive offers given by Spotify.',
+        skills: ['HTML', "CSS", 'JavaScript'],
+        details: '• This is a offer page specially targeting the student customer with exclusive offers given by Spotify.',
     }
 ];
 
@@ -57,14 +61,11 @@ if(bar){
     bar.addEventListener('click', () => {
         nav.className= 'active';
         bar.style.opacity= '0';
-        console.log(nav.className);
-        console.log(nav.style);
     });
 }
 
 if(close){
-    close.addEventListener('click', () => {
-        console.log(nav.classList);
+    close.addEventListener('click', () => { 
         nav.classList.remove('active');
         bar.style.opacity= '1';
     })
@@ -181,6 +182,10 @@ function render_outer_layout() {
                         const img_section= document.createElement('div');
                         img_section.setAttribute('class', 'img-section');
                         about_project_section.appendChild(img_section);
+
+                        const skill_div= document.createElement('div');
+                        skill_div.setAttribute('class', 'skill-div');
+                        about_project_section.appendChild(skill_div);
         
                         const project_info= document.createElement('div');
                         project_info.setAttribute('class', 'project-info');
@@ -200,7 +205,6 @@ function render_game_development_projects() {
 
 
 function render_web_development_projects() {
-    console.log(data_of_web_app_projects);
 
     data_of_web_app_projects.forEach(project => {
         render_content_of_projects(project);
@@ -216,13 +220,12 @@ function render_content_of_projects(project) {
    
 
 
-    const {name, image_path, source_code, hosting_link, in_progress}= project;
+    const {name, skills, image_path, source_code, hosting_link, in_progress}= project;
 
         // console.log(name);
 
         const project_div= document.createElement('div');
         project_div.setAttribute('class', 'project-div');
-        // project_div.setAttribute('id', )
         project_list_div.appendChild(project_div);
 
             const project_header= document.createElement('div');
@@ -247,24 +250,26 @@ function render_content_of_projects(project) {
 
                 const source_code_link= document.createElement('a');
                 source_code_link.href=`${source_code}`;
+                source_code_link.target='_blank';
                 source_code_link.innerText= 'Source Code';
                 link_div.appendChild(source_code_link);
 
                 const preview= document.createElement('a');
                 preview.href= `${hosting_link}`;
+                preview.target= '_blank';
                 preview.innerText= 'Preview';
                 link_div.appendChild(preview);
 
         
         project_div.addEventListener('click', (event) => {
-            // event.preventDefault();
-            // console.log('project_div clicked');
 
             const img_section= document.querySelector('.img-section');
             const project_info= document.querySelector('.project-info');
+            const skill_div= document.querySelector('.skill-div');
 
             img_section.innerHTML= '';
             project_info.innerHTML= '';
+            skill_div.innerHTML= '';
 
             render_project_image(project); 
         }, false);
@@ -273,16 +278,30 @@ function render_content_of_projects(project) {
 function render_project_image(project) {
     const img_section= document.querySelector('.img-section');
     const project_info= document.querySelector('.project-info');
+    const skill_div= document.querySelector('.skill-div');
 
     const project_image= document.createElement('img');
     project_image.src= `${project.image_path}`;
     project_image.alt= `Project Image for ${project.title}`;
     img_section.appendChild(project_image);
 
+    render_skill_section(project.skills, skill_div);
+
     const project_details= document.createElement('div');
     project_details.innerText= `${project.details}`;
     project_info.appendChild(project_details);
 }
 
+function render_skill_section(skills, parent) {
+
+    skills.forEach(skill => {
+        const skill_name= document.createElement('div');
+        skill_name.setAttribute('class', 'name-of-skill');
+        skill_name.innerText= `${skill}`;
+        parent.appendChild(skill_name);
+    });
+}
+
 
 render_project_section();
+
