@@ -27,11 +27,21 @@ const data_of_game_projects= [
 
 const data_of_web_app_projects= [
     {
+        name: 'SoundCloud Clone',
+        image_path: './assets/soundCloud_clone_img.PNG',
+        source_code: 'https://github.com/den319/Sound-Cloud-Clone---React-Project-1---o4mx250y2w4d',
+        hosting_link: 'https://sound-cloud-clone-react-project-1-o4mx250y2w4d.vercel.app/',
+        in_progress: false,
+        skills: ['HTML', "CSS", 'ReactJS', 'TailwindCSS'],
+        details: '• Developed a SoundCloud clone, a web-based music streaming application, to showcase my expertise in web development.  \n\n • This project mirrors the core functionalities of SoundCloud, enabling users to explore, upload, and listen to music seamlessly.  \n\n • It demonstrates my skills in creating responsive user interfaces, managing audio playback, and implementing dynamic data handling with ReactJS.',
+
+    },
+    {
         name: 'Movie Spooky',
         image_path: './assets/movie_spooky.JPG',
         source_code: 'https://github.com/den319/Movie-Spooky',
         hosting_link: 'https://den319.github.io/Movie-Spooky/',
-        in_progress: true,
+        in_progress: false,
         skills: ['HTML', "CSS", 'JavaScript'],
         details: '• A responsive movie search application that allows users to search for movies, view detailed information, and manage a watchlist. \n\n • Utilized the REST API to fetch movie data and implemented features like sorting and searching. \n\n • Features: Watchlist management, sorting of list of movies, responsive design.',
     },
@@ -40,7 +50,7 @@ const data_of_web_app_projects= [
         image_path: './assets/stokart.JPG',
         source_code: 'https://github.com/den319/Stokart-v-1.0.0',
         hosting_link: 'https://den319.github.io/Stokart-v-1.0.0//',
-        in_progress: true,
+        in_progress: fasle,
         skills: ['HTML', "CSS", 'JavaScript'],
         details: '• A responsive stock market information web-application that provides updates on stocks of US stock market. \n\n • Utilized the REST API to fetch stock data, including top gainers and top losers. \n\n • Features: Top gainers and losers, stock search with recommendation, daily/weekly/monthly data views, watchlist management.',
     },
