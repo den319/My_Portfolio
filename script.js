@@ -50,7 +50,7 @@ const data_of_web_app_projects= [
         image_path: './assets/stokart.JPG',
         source_code: 'https://github.com/den319/Stokart-v-1.0.0',
         hosting_link: 'https://den319.github.io/Stokart-v-1.0.0//',
-        in_progress: fasle,
+        in_progress: false,
         skills: ['HTML', "CSS", 'JavaScript'],
         details: '• A responsive stock market information web-application that provides updates on stocks of US stock market. \n\n • Utilized the REST API to fetch stock data, including top gainers and top losers. \n\n • Features: Top gainers and losers, stock search with recommendation, daily/weekly/monthly data views, watchlist management.',
     },
